@@ -61,7 +61,36 @@ end procedure
 #### JavaScript
 
 ```javascript
+function selectionSort(a){
+    console.log('Before sorting');
+    console.log(a);
+    console.log('-------------------');
 
+    for(var i=0;i<a.length-1;i++){
+        //Variable that holds the current min for each pass
+        var min = i;
+
+        for(var j=i+1;j<a.length;j++){
+            //If a smaller number has been found
+            if(a[j] < a[min]){
+                //Set the new min to the current min position
+                min = j;
+            }
+        }
+        //After each pass, if the current min element != the initial min element, swap them
+        if(min != i){
+            var temp = a[i];
+            a[i] = a[min];
+            a[min] = temp;
+        }
+    }
+    console.log('After sorting');
+    console.log(a);
+}
 ```
 
 ### Other Variants
+
+#### Cocktail Sort
+
+#### Bingo Sort
