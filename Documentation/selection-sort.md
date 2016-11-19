@@ -32,8 +32,36 @@ Sort by selecting the smallest unsorted item, then swapping it with the item in 
 
 ## Algorithm
 
+- Array to sort: `A[0]` to `A[n-1]`
+- n = length(A)
+- Advance the position through the entire array 
+    - Find the min element in the unsorted `a[i...n-1]`
+    - Assume min is the first element
+    - Find the smallest in array after the selected element
+        - If there is a new smallest, swap the previous smallest with the new one
+        
 ### Pseudo Code
 
+```
+procedure selectionSort(A: sortable)
+    n = length
+    for i=0 to n-1 (increment by 1)
+        startMin = A[i]
+        for j=i+1 to n (increment by 1)
+            if A[j] < startMin
+                swap startMin with A[j]
+            end If
+        end for
+    end for
+end procedure
+```
+
 ### Implementations
+
+#### JavaScript
+
+```javascript
+
+```
 
 ### Other Variants
